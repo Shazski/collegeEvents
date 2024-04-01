@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body style="color: white; background-image: url( 62862be04256997d0cfcc23e.jpg`); font-family: 'Times New Roman', Times, serif; background-image:linear-gradient(to right,rgba(0, 0, 0, 0.671),rgba(0, 0, 0, 0.61)),url(/pics/footer.jpg)";>
+  
+<div class="container">
+    <div class="row">
+      <h3 style="margin-left: 400px;">ADMIN PANEL</h3>
+    </div>
+    <div>
+      
+    </div>
+    <table class="table mt-3">
+  <thead>
+    <tr>
+      <th scope="col">Hod Name</th>
+      <th scope="col">Department</th>
+      <th scope="col">Role</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Delete</th>
+
+    </tr>
+  </thead>
+  {{#each hod}}
+  <body>
+    <tr>
+      <td>{{this.hodName}}</td>
+      <td>{{this.department}}</td>
+      <td>{{this.role}}</td>
+      <td>{{this.email}}</td>
+      <td>{{this.phone}}</td>
+      <td>
+          <a href="/admin/delete-products/{{this._id}}" class="btn btn-danger" onclick="return confirm('are you want to delete the college request {{this.name}}')" >Delete</a>
+
+      </td>
+    </tr>
+    {{/each}}
+  </body>
+</table>
+</div>
+
+</body>
+</html>

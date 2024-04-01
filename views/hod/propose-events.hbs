@@ -1,0 +1,33 @@
+<html>
+
+<body>
+  <div class="col-md-6 offset-md-3 mt-5">
+    <br>
+    <form accept-charset="UTF-8" action="/hod/propose-event" method="POST">
+      <div class="form-group">
+        <label for="exampleInputName">Event Name</label>
+        <input type="text" name="eventName" class="form-control" id="exampleInputName" placeholder=""
+          required="required">
+      </div>
+      <div class="form-group">
+        <input required type="text" value="{{proposedBy.hodName}}" name="proposedBy" hidden class="form-control"
+          id="exampleInputEmail1">
+        <input required type="text" value="{{proposedBy.email}}" name="hodEmail" hidden class="form-control"
+          id="exampleInputEmail1">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">Date</label>
+        <input required type="date" name="date" class="form-control" id="inputAddress" placeholder="">
+        <input required type="text" name="accepted" hidden value="false" class="form-control" id="inputAddress" placeholder="">
+        <input required type="text" name="category" hidden value="college" class="form-control" id="inputAddress" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">No of Days</label>
+        <input required type="number" name="noOfDays" class="form-control" id="inputAddress" placeholder="">
+      </div>
+      <button type="submit" style="color: black;" class="btn btn-primary">Propose Event</button>
+    </form>
+  </div>
+</body>
+
+</html>

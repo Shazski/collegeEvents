@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#0ed3cf">
+    <meta name="msapplication-TileColor" content="#0ed3cf">
+    <meta name="theme-color" content="#0ed3cf">
+
+    <meta property="og:image" content="http://tailwindcomponents.com/storage/5222/conversions/temp50352-ogimage.jpg?v=2023-01-29 10:25:15" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="640" />
+    <meta property="og:image:type" content="image/png" />
+
+    <meta property="og:url" content="https://tailwindcomponents.com/component/header-nimbus/landing" />
+    <meta property="og:title" content="Header NIMBUS desktop by tom-dr" />
+    <meta property="og:description" content="Header NIMBUS desktop" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@TwComponents" />
+    <meta name="twitter:title" content="Header NIMBUS desktop by tom-dr" />
+    <meta name="twitter:description" content="Header NIMBUS desktop" />
+    <meta name="twitter:image" content="http://tailwindcomponents.com/storage/5222/conversions/temp50352-ogimage.jpg?v=2023-01-29 10:25:15" />
+
+    <title>Header NIMBUS desktop by tom-dr. </title>
+
+            <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+<body class="bg-gray-200">
+    <style>
+  .header-links li span {
+    position: relative;
+    z-index: 0;
+  }
+
+  .header-links li span::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    bottom: 2px;
+    left: -4px;
+    right: -4px;
+    display: block;
+    height: 6px;
+  }
+
+  .header-links li.active span::before {
+    background-color: #fcae04;
+  }
+
+  .header-links li:not(.active):hover span::before {
+    background-color: #ccc;
+  }
+</style>
+
+<header style="z-index: 100;position: sticky;top: 0;box-shadow: 0 4px 2px -2px rgba(0,0,0,.1);" class="bg-white shadow-lg h-24 md:flex">
+  <a href="" class="border flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
+    <img style="height: 60px;width: 150px;" class="" src="/pics/download.png" alt="" />
+  </a>
+  <nav style="" class="header-links contents font-semibold text-base lg:text-lg">
+    <ul class="flex items-center ml-4 xl:ml-8 mr-auto">
+      <li class="p-3 xl:p-6 active">
+        <a href="/">
+          <span>Home</span>
+        </a>
+      </li>
+      <li class="p-3 xl:p-6">
+        <a href="/see-events">
+          <span>Events</span>
+        </a>
+      </li>
+
+      {{#if student}}
+      <li class="p-3 xl:p-6">
+        <a href="/contact">
+          <span>Contacts</span>
+        </a>
+      </li>
+      {{/if}}
+    </ul>
+  </nav>
+  
+  <div class="border flex items-center px-4 lg:px-6 xl:px-8">
+    {{#if userName}}
+    <button ondblclick="location='/logout'" class="bg-black hover:bg-gray-700 text-white font-bold px-4 xl:px-6 py-2 xl:py-3 rounded">{{userName}}</button>
+    {{/if}} 
+  </div>
+</header>
+</body>
+</html>

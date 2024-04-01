@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body
+  style="color: white;background-image:linear-gradient(to right,rgba(0, 0, 0, 0.671),rgba(0, 0, 0, 0.61)),url(/pics/footer.jpg) ;">
+
+  <div class="container">
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Event Name</th>
+          <th scope="col">Proposed By</th>
+          <th scope="col">Category</th>
+          <th scope="col">Date</th>
+          <th scope="col">No of days</th>
+          {{#if events}}
+          <th scope="col">Assign Teacher</th>
+          {{/if}}
+          <th scope="col">Winner</th>
+        </tr>
+      </thead>
+      {{#if events}}
+      {{#each events}}
+      <tr>
+        <td>{{this.eventName}}</td>
+        <td>{{this.proposedBy}}</td>
+        <td>{{this.category}}</td>
+        <td>{{this.date}}</td>
+        <td>{{this.noOfDays}}</td>
+        <td>
+          <select onchange="redirectToRoute(this.value, '{{this._id}}')" style="border-radius: 20px;" name="inCharge"
+            id="">
+            <option value="" hidden selected>Teacher in-charge</option>
+            {{#each ../teacher}}
+            <option value="{{this._id}}">{{this.teacherName}}</option>
+            {{/each}}
+          </select>
+        </td>
+        <td>{{this.winner}}</td>
+      </tr>
+      {{/each}}
+      {{else}}
+      <tr>
+        <td colspan="6">
+          <h1 style="color: red; font-size:40px; text-align: center;">No Events Available</h1>
+        </td>
+      </tr>
+      {{/if}}
+    </table>
+  </div>
+
+  <script>
+    function redirectToRoute(selectedTeacherId, eventId) {
+      // Implement your redirection logic here
+      console.log("Selected Teacher ID:", selectedTeacherId);
+      // Example: Redirect to a route based on the selected teacher ID
+      window.location.href = `/hod/assign-teacher/${selectedTeacherId}/${eventId}`;
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Learn an Education Category Flat Bootstarp Resposive Website Template | Login :: w3layouts</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="keywords" content="Learn Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+  <script
+    type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+  <link href="/css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
+  <link href="/css/style.css" type="text/css" rel="stylesheet" media="all">
+  <link href="/css/font-awesome.css" rel="stylesheet">
+  <!----font-Awesome----->
+  <script>
+    $(document).ready(function () {
+      $(".dropdown").hover(
+        function () {
+          $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+          $(this).toggleClass('open');
+        },
+        function () {
+          $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+          $(this).toggleClass('open');
+        }
+      );
+    });
+  </script>
+</head>
+
+<body>
+
+
+  <!-- banner -->
+  <div class="courses_banner">
+    <div class="container">
+      <h3 style="margin-left: 499px;font-family: 'Times New Roman', Times, serif;">EVENT LIST</h3>
+
+    </div>
+  </div>
+  <!-- //banner -->
+  <div class="courses_box1">
+    <div class="container">
+      <section class="" style="background-color: #eee;margin-top: 30px;">
+        <div style="font-family: 'Times New Roman', Times, serif;" class="container h-100 py-5">
+          <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-10">
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <h3 style="font-family:'Times New Roman', Times, serif ;" class="fw-normal mb-0 text-black">Events List
+                </h3>
+              </div>
+              {{#each events}}
+              <div style="border-radius:10px ;" class="card rounded-3 mb-4">
+                <div class="card-body p-4">
+                  <div class="row d-flex m-5 justify-content-between align-items-center">
+                    <div>
+                      <h5 style="font-size:20px;">Event NAME: <span class="font-size:50px"> {{this.eventName}}</span>
+                      </h5>
+                      <h5 class="mt-3">In Charge Id:{{inCharge}}</h5>
+                      <p class="mt-3"><span id="price">Date:{{this.date}}</span>
+                    </div>
+                    
+                    <a href='/participate/{{this._id}}' class="btn btn-primary">Register</a>
+                  </div>
+                  <div>
+                  </div>
+                </div>
+              </div>
+              {{/each}}
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+</body>
+
+</html>

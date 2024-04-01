@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" <link
+    rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body
+  style="color: white;background-image:linear-gradient(to right,rgba(0, 0, 0, 0.671),rgba(0, 0, 0, 0.61)),url(/pics/footer.jpg)"
+  ;>
+
+  <div class="container">
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Event Name</th>
+          <th scope="col"> Proposed By</th>
+          <th scope="col">Date</th>
+          <th scope="col">No of days</th>
+          <th scope="col">Approve/Reject</th>
+        </tr>
+      </thead>
+      {{#if eventRequest}}
+      {{#each eventRequest}}
+      <body>
+        <tr>
+          <td>{{this.eventName}}</td>
+          <td>{{this.proposedBy}}</td>
+          <td>{{this.date}}</td>
+          <td>{{this.noOfDays}}</td>
+          <td><a href="/hod/approve-req?id={{this._id}}" class="btn btn-primary"><i class="fa fa-check"></i></a>
+            <a href="/hod/delete-req/{{this._id}}" class="btn btn-danger"
+              onclick="return confirm('are you want to delete the request of {{this.eventName}}')"><i
+                class="fa fa-trash"></i></a>
+          </td>
+        </tr>
+        {{/each}}
+        {{else}}
+        <h1 style="color: red; font-size:40px; text-align: center;">No Event Request Available</h1>
+        {{/if}}
+
+      </body>
+    </table>
+  </div>
+
+</body>
+
+</html>

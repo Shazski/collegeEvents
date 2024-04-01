@@ -1,0 +1,55 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Flat Looking Forms Widget a Flat Responsive Widget Template :: w3layouts</title>
+<!-- Meta tag Keywords -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Flat Looking Forms Widget a Flat Responsive Widget,Login form widgets, Sign up Web forms , Login signup Responsive web form,Flat Pricing table,Flat Drop downs,Registration Forms,News letter Forms,Elements" />
+<!-- Meta tag Keywords -->
+<link rel="stylesheet" href="/csss/style.css" type="text/css" media="all" /> <!-- Style-CSS -->
+<link rel="stylesheet" href="/csss/font-awesome.min.css"><!--fontawesome-css--> 
+<link href="//fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+<section style="margin-top: 39px;margin-left: 100px;width: 2000px;" class="main-w3ls">
+	<div class="top-header-w3ls">
+		<div class="headerleft-w3ls">
+				<div class="login-w3ls">
+					<h2>login</h2>
+					{{#if loginerror}}
+					<p style="color: white;">{{loginerror}}</p>
+					{{/if}}		
+					</div>
+			<form action="/login" method="post">
+				<div class="email-w3ls">
+					<span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
+					<input type="email" name="email" placeholder="email" required="">
+				</div>
+				<div class="hpassword-w3ls">
+					<span><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+					<input type="password" name="password" placeholder="password" required="">
+				</div>
+				<input type="submit" value="login">
+				<div class="forgot-w3ls">
+					<p><a href="/signup">Dont have an account?</a></p>
+				</div>
+			</form>
+			<div class="clear"></div>
+		</div>
+
+		
+	</div>
+		<div class="clear"></div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<html>
+
+<body>
+  <div class="col-md-6 offset-md-3 mt-5">
+    <br>
+    <form accept-charset="UTF-8" action="/hod/add-teacher" method="POST">
+      <div class="form-group">
+        <label for="exampleInputName">Teacher Name</label>
+        <input type="text" name="teacherName" class="form-control" id="exampleInputName" placeholder=""
+          required="required">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" required="required">Department</label>
+        <input required type="text" value="{{department}}" readonly name="department" class="form-control" id="exampleInputEmail1"
+          aria-describedby="emailHelp">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">email</label>
+        <input required type="text" name="email" class="form-control" id="inputAddress" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="inputAddress">password</label>
+        <input required type="password" name="password" class="form-control" id="inputAddress" placeholder="">
+      </div>
+      <div class="form-group">
+        <label for="example-tel-input" class="col-2 col-form-label">Mobile</label>
+        <input required class="form-control" name="phone" type="number" value="" id="example-tel-input">
+      </div>
+      <button type="submit" style="color: black;" class="btn btn-primary">ADD Teacher</button>
+    </form>
+  </div>
+</body>
+
+</html>

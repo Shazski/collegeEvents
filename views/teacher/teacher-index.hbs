@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body
+  style="color: white; background-image: url( 62862be04256997d0cfcc23e.jpg`); font-family: 'Times New Roman', Times, serif; background-image:linear-gradient(to right,rgba(0, 0, 0, 0.671),rgba(0, 0, 0, 0.61)),url(/pics/footer.jpg)"
+  ;>
+
+  <div class="container">
+    <div class="row">
+      <h3 style="margin-left: 400px;">Teacher Panel</h3>
+    </div>
+    <div>
+
+    </div>
+    <table class="table mt-3">
+      <thead>
+        <tr>
+          <th scope="col">Assigned event</th>
+          <th scope="col">Proposed By</th>
+          <th scope="col">Date</th>
+          <th scope="col">No of Days</th>
+          <th scope="col">Student Req</th>
+          <th scope="col">Winner</th>
+        </tr>
+      </thead>
+      {{#each events}}
+
+      <body>
+        <tr>
+          <td>{{this.eventName}}</td>
+          <td>{{this.proposedBy}}</td>
+          <td>{{this.date}}</td>
+          <td>{{this.noOfDays}}</td>
+          <td><a href="/teacher/view-student-request/{{this._id}}" class="btn btn-primary">View Request</a></td>
+          <td>
+            {{#if this.winner}}
+            <h5>{{this.winner}}</h5>
+            {{else}}
+            <select onchange="redirectToRoute(this.value,'{{this._id}}')" name="winner" id="">
+              <option selected hidden value="">Select winner</option>
+              {{#each this.participants}}
+              <option value="{{this.Username}}">{{this.Username}}</option>
+              {{/each}}
+            </select>
+            {{/if}}
+          </td>
+        </tr>
+        {{/each}}
+      </body>
+    </table>
+  </div>
+
+</body>
+
+</html>
+
+<script>
+  function redirectToRoute(winnerName, eventId) {
+    console.log(winnerName, eventId, "console.logdataa")
+    // Implement your redirection logic here
+    // Example: Redirect to a route based on the selected teacher ID
+    window.location.href = `/teacher/event-winner/${winnerName}/${eventId}`;
+  }
+</script>
