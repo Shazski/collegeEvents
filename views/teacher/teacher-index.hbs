@@ -29,6 +29,7 @@
           <th scope="col">No of Days</th>
           <th scope="col">Student Req</th>
           <th scope="col">Winner</th>
+          <th scope="col">No Of students</th>
         </tr>
       </thead>
       {{#each events}}
@@ -51,6 +52,9 @@
               {{/each}}
             </select>
             {{/if}}
+          </td>
+          <td>
+            <h5>{{this.participants.length}}</h5>
           </td>
         </tr>
         {{/each}}

@@ -140,15 +140,15 @@ router.get('/teacher', teacherVerify, (req, res) => {
     console.log(events, "events data in controller")
     if (events.length > 0) {
       console.log(events, "events")
-      res.render('teacher/teacher-index', { events, teacher: true })
+      res.render('teacher/teacher-index', { events, teacher: req.session.user })
     } else {
-      res.render('teacher/teacher-index', { events: false, teacher: true })
+      res.render('teacher/teacher-index', { events: false, teacher: req.session.user })
     }
   })
 })
 
 router.get('/teacher/propose-department-event', teacherVerify, (req, res) => {
-  res.render('teacher/propose-department-event', { proposedBy: req.session.user, teacher: true })
+  res.render('teacher/propose-department-event', { proposedBy: req.session.user, teacher: req.session.user })
 })
 router.get('/hod/approve-req', hodverify, (req, res) => {
   const id = req.query.id
@@ -161,9 +161,9 @@ router.get('/hod/approve-req', hodverify, (req, res) => {
 router.get('/hod/department-event-request', hodverify, async (req, res) => {
   const eventRequest = await userHelper.getAllDepartmentEventRequest(req.session.user.department)
   if (eventRequest.length > 0) {
-    res.render('hod/view-department-event-request', { eventRequest, hod: true })
+    res.render('hod/view-department-event-request', { eventRequest, hod: req.session.user })
   } else {
-    res.render('hod/view-department-event-request', { eventRequest: false, hod: true })
+    res.render('hod/view-department-event-request', { eventRequest: false, hod: req.session.user })
   }
 })
 
@@ -214,9 +214,10 @@ router.get('/hod', hodverify, async (req, res) => {
   let teacher = await userHelper.getAllDepartmentTeachers(req.session.user.department)
   console.log(teacher, "teacher data")
   if (events.length > 0) {
-    res.render('hod/hod-index', { events, hod: true, teacher: teacher })
+    res.render('hod/hod-index', { events, hod: req.session.user, teacher: teacher })
+    console.log(req.session.user,"name");
   } else {
-    res.render('hod/hod-index', { hod: true, events: false })
+    res.render('hod/hod-index', { hod: req.session.user, events: false })
   }
 })
 
@@ -332,9 +333,9 @@ router.get('/teacher/view-student-request/:id', teacherVerify, (req, res) => {
     const eventId = events._id.toString()
     console.log(eventId, "event id")
     if (events?.participants?.length > 0) {
-      res.render('teacher/view-student-request', { events: events.participants, teacher: true, eventId })
+      res.render('teacher/view-student-request', { events: events.participants, teacher: req.session.user, eventId })
     } else {
-      res.render('teacher/view-student-request', { events: false, teacher: true })
+      res.render('teacher/view-student-request', { events: false, teacher: req.session.user })
     }
   })
 })
